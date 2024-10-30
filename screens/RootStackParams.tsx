@@ -13,3 +13,6 @@ export type RootStackParamList = {
     location: undefined
     contact:undefined
 };
+
+
+
