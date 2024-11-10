@@ -5,7 +5,7 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-type monthScreenProp = StackNavigationProp< RootStackParamList,'month'>;
+type monthScreenProp = StackNavigationProp< RootStackParamList,'Month'>;
 
 export default function monthScreen() {
   const navigation = useNavigation<monthScreenProp>();
@@ -27,9 +27,9 @@ export default function monthScreen() {
 
         // Navigate based on the selected value
         if (itemValue === '6Month') {
-          navigation.navigate('month'); // Navigate to the 'week' screen
+          navigation.navigate('Month'); // Navigate to the 'week' screen
         } else if (itemValue === '6Week') {
-          navigation.navigate('week'); // Navigate to the 'month' screen
+          navigation.navigate('Week'); // Navigate to the 'month' screen
         }
       }}
       style={styles.picker}
@@ -74,31 +74,31 @@ export default function monthScreen() {
       {/* Footer Section with Icon Images */}
       <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('home')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
           <Image source={require('./img/HomeIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Home</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('location')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Location')}>
           <Image source={require('./img/LocationIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Locations</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('week')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Week')}>
           <Image source={require('./img/CourseIcon.png')} style={styles.icon} />
           <Text style={styles.iconLabel}>Courses</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('fees')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Fees')}> 
           <Image source={require('./img/FeesIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Fees</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('contact')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Contact')}> 
           <Image source={require('./img/ContactIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Contact</Text>

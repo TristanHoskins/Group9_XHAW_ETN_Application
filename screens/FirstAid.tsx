@@ -30,7 +30,7 @@ export default function FirstAidScreen() {
           <Text style={styles.headerText}>EMPOWERING</Text>
           <Text style={styles.subHeaderText}>THE NATION</Text>
         <View style={styles.backB}>
-      <TouchableOpacity onPress={() => navigation.navigate('month')}> 
+      <TouchableOpacity onPress={() => navigation.navigate('Month')}> 
         <Image source={require('./img/backB.png')} style={styles.back}/>
       </TouchableOpacity>
       </View>
@@ -129,31 +129,31 @@ export default function FirstAidScreen() {
           {/* Footer Icons */}
           <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('home')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
           <Image source={require('./img/HomeIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Home</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('location')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Location')}>
           <Image source={require('./img/LocationIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Locations</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('week')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Week')}>
           <Image source={require('./img/CourseIcon.png')} style={styles.icon} />
           <Text style={styles.iconLabel}>Courses</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('fees')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Fees')}> 
           <Image source={require('./img/FeesIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Fees</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('contact')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Contact')}> 
           <Image source={require('./img/ContactIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Contact</Text>

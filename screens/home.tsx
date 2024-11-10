@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from './RootStackParams';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-type homeScreenProp = StackNavigationProp< RootStackParamList,'home'>;
+type homeScreenProp = StackNavigationProp< RootStackParamList,'Home'>;
 
 export default function HomeScreen() {
   const navigation = useNavigation<homeScreenProp>();
@@ -42,7 +42,7 @@ export default function HomeScreen() {
         {/* Two Image Section */}
         <View style={styles.imageRow}>
           <View style={styles.imageBox}>
-          <TouchableOpacity onPress={() => navigation.navigate('week')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Week')}>
             <Image style={styles.placeholderImage} source={require('./img/6weekhead.png')} />
             </TouchableOpacity>
             <Text style={styles.textBelow}>
@@ -52,7 +52,7 @@ export default function HomeScreen() {
             </Text>
           </View>
           <View style={styles.imageBox}>
-          <TouchableOpacity onPress={() => navigation.navigate('month')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Month')}>
             <Image style={styles.placeholderImage} source={require('./img/6monthhead.png')} />
             </TouchableOpacity>
             <Text style={styles.textBelow}>
@@ -144,31 +144,31 @@ export default function HomeScreen() {
       {/* Footer Section with Icon Images */}
       <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
           <Image source={require('./img/HomeIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Home</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('location')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Location')}>
           <Image source={require('./img/LocationIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Locations</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('week')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Week')}>
           <Image source={require('./img/CourseIcon.png')} style={styles.icon} />
           <Text style={styles.iconLabel}>Courses</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('fees')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Fees')}> 
           <Image source={require('./img/FeesIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Fees</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('ContactScreen')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Contact')}> 
           <Image source={require('./img/ContactIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Contact</Text>

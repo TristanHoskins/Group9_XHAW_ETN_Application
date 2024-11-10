@@ -1,17 +1,17 @@
 export type RootStackParamList = { 
-    home: undefined
-    fees: undefined
-    month: undefined
-    week: undefined
+    Home: undefined
+    Fees: undefined
+    Month: undefined
+    Week: undefined
     FirstAid: undefined;
-    sew: undefined
-    land: undefined
-    lifeS: undefined
-    child: undefined
-    cook: undefined
-    garden: undefined
-    location: undefined
-    contact:undefined
+    Sew: undefined
+    Land: undefined
+    LifeS: undefined
+    Child: undefined
+    Cook: undefined
+    Garden: undefined
+    Location: undefined
+    Contact:undefined
 };
 
 

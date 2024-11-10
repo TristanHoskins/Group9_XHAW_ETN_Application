@@ -6,7 +6,7 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-type LocationScreenProp = StackNavigationProp< RootStackParamList,'location'>;
+type LocationScreenProp = StackNavigationProp< RootStackParamList,'Location'>;
 
 
 type Location = {
@@ -137,31 +137,31 @@ const locations: Location[] = [
       {/* Footer Section with Icon Images */}
       <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('home')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
           <Image source={require('./img/HomeIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Home</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('location')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Location')}>
           <Image source={require('./img/LocationIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Locations</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('week')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Week')}>
           <Image source={require('./img/CourseIcon.png')} style={styles.icon} />
           <Text style={styles.iconLabel}>Courses</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('fees')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Fees')}> 
           <Image source={require('./img/FeesIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Fees</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('contact')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('Contact')}> 
           <Image source={require('./img/ContactIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Contact</Text>
