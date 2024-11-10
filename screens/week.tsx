@@ -44,7 +44,7 @@ export default function weekScreen() {
               imageSrc={require('./img/childmindingh.png')}
               title="Child Minding"
               description="This course teaches childcare providers how to manage children's physical, emotional, and educational needs. Proper training helps to create safe, nurturing environments where children can thrive."
-              price="R 1500" 
+              price="R 750" 
               navigation={navigation}
             
             />
@@ -53,14 +53,14 @@ export default function weekScreen() {
               imageSrc={require('./img/cookingh.png')}
               title="Cooking"
               description="Cooking is a vital life skill that ensures self-sufficiency, nutrition, and cost-effective meal preparation. Knowledge of cooking techniques allows individuals to make healthier food choices and reduce reliance on processed or fast food."
-              price="R 1500"
+              price="R 750"
               navigation={navigation}
             />
             <CourseBox3
               imageSrc={require('./img/gardenh.png')}
               title="Garden Maintenance"
               description="Garden maintenance is essential for preserving the health and beauty of outdoor spaces, whether in residential homes or larger estates. "
-              price="R 1500"
+              price="R 750"
               navigation={navigation}
             />
             
@@ -106,34 +106,35 @@ export default function weekScreen() {
   
   // Course box component
   const CourseBox1 = ({ imageSrc, title, description, price, navigation }: any) => (
-    <TouchableOpacity onPress={() => navigation.navigate('child')}>
-      <View style={styles.courseBox}>
+    <View style={styles.courseBox}>
       <Image source={imageSrc} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
       <Text>{description}</Text>
-      <Button title={price} color= '#FFC107'/>
-     </View>
-     </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('child')}>
+        <Text style={styles.price}>{price} </Text>
+      </TouchableOpacity>
+    </View>
   );
+  
   const CourseBox2 = ({ imageSrc, title, description, price, navigation }: any) => (
+    <View style={styles.courseBox}>
+    <Image source={imageSrc} style={styles.image} />
+    <Text style={styles.title}>{title}</Text>
+    <Text>{description}</Text>
     <TouchableOpacity onPress={() => navigation.navigate('cook')}>
-      <View style={styles.courseBox}>
-      <Image source={imageSrc} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text>{description}</Text>
-      <Button title={price} color= '#FFC107'/>
-     </View>
-     </TouchableOpacity>
+      <Text style={styles.price}>{price} </Text>
+    </TouchableOpacity>
+  </View>
   );
   const CourseBox3 = ({ imageSrc, title, description, price, navigation }: any) => (
+    <View style={styles.courseBox}>
+    <Image source={imageSrc} style={styles.image} />
+    <Text style={styles.title}>{title}</Text>
+    <Text>{description}</Text>
     <TouchableOpacity onPress={() => navigation.navigate('garden')}>
-      <View style={styles.courseBox}>
-      <Image source={imageSrc} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text>{description}</Text>
-      <Button title={price} color= '#FFC107'/>
-     </View>
-     </TouchableOpacity>
+      <Text style={styles.price}>{price} </Text>
+    </TouchableOpacity>
+  </View>
   );
   
   // Styles
@@ -176,6 +177,19 @@ export default function weekScreen() {
     title: {
       fontSize: 18,
       fontWeight: 'bold',
+    },
+
+    price: {
+      height: 30,
+      backgroundColor: '#FFC107',
+      marginVertical: 10,
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      borderRadius: 10,
+      fontSize: 24,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      
     },
     // Footer navigation styles
     footerIcons: {

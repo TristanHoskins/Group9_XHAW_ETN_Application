@@ -64,8 +64,11 @@ export default function contactScreen() {
               </TouchableOpacity>
             </View>
             </View>
+            </View>
             
-        <View style={styles.footerIcons}>
+            </ScrollView>
+      {/* Footer Section with Icon Images */}
+      <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('home')}> 
           <Image source={require('./img/HomeIcon.png')} style={styles.icon} />
@@ -97,8 +100,8 @@ export default function contactScreen() {
           <Text style={styles.iconLabel}>Contact</Text>
         </View>
       </View>
-    </View>
-    </ScrollView>
+    
+
     </SafeAreaView>
   );
 }

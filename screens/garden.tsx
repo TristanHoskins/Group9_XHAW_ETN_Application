@@ -39,7 +39,7 @@ export default function gardenScreen() {
         {/* Content Section */}
         <View style={styles.content}>
           <View style={styles.blueSection}>
-            <Text style={styles.blueSectionText}>6 MONTH COURSE</Text>
+            <Text style={styles.blueSectionText}>6 WEEK COURSE</Text>
           </View>
           <View style={styles.blueSection}>
             <Text style={styles.blueSectionText}>Garden Maintenance</Text>

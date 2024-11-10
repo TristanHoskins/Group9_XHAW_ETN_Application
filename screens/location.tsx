@@ -78,8 +78,8 @@ const locations: Location[] = [
 
 
   return (
-
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
+      <ScrollView style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
         {/* Logo Image */}
@@ -133,6 +133,8 @@ const locations: Location[] = [
         </View>
 
       ))}
+       </ScrollView>
+      {/* Footer Section with Icon Images */}
       <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('home')}> 
@@ -165,38 +167,9 @@ const locations: Location[] = [
           <Text style={styles.iconLabel}>Contact</Text>
         </View>
       </View>
+    </View>
     
-      <View style={styles.testimonials}>
-        {/* First Testimonial */}
-        <View style={styles.testimonial}>
-          <Image
-            source={require('./img/p1.jpg')}
-            style={styles.testimonialImg}
-          />
-          <Text style={styles.testimonialName}>Thomas Shane</Text>
-          <Text style={styles.testimonialDescription}>
-            The Empowering the Nations Training School is located in CBD of Sandton, which is an easy commute for a lot of areas via Buses, trains and personal cars. The premises are clean and well-kept and the staff ever so friendly. I will always back at my time at Empowering the Nations in Sandton CBD with a smile.
-          </Text>
-        </View>
-
-        {/* Second Testimonial */}
-        <View style={styles.testimonial}>
-          <Image
-            source={require('./img/p2.png')}
-            style={styles.testimonialImg}
-          />
-          <Text style={styles.testimonialName}>Cindy van Wyk</Text>
-          <Text style={styles.testimonialDescription}>
-          Studying at Empowering the Nation's Johannesburg campus was an incredible journey for me. The location was easily accessible, and the atmosphere was always welcoming and vibrant. What I loved most about Johannesburg was the energy—it felt like I was part of something much bigger. The campus had all the facilities we needed, and the support from the staff was outstanding. I felt encouraged every step of the way, which made me push myself further than I ever thought possible. Today, I have the skills and confidence to pursue my career, and Johannesburg will always hold a special place in my heart because it’s where my journey began.
-          </Text>
-        </View>
-      </View>
-
-
-    </ScrollView>
-
   );
-
 };
 
 

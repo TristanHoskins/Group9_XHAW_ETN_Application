@@ -112,44 +112,44 @@ export default function monthScreen() {
 
 // Course box component
 const CourseBox1 = ({ imageSrc, title, description, price, navigation }: any) => (
-  <TouchableOpacity onPress={() => navigation.navigate('FirstAid')}>
-    <View style={styles.courseBox}>
-    <Image source={imageSrc} style={styles.image} />
-    <Text style={styles.title}>{title}</Text>
-    <Text>{description}</Text>
-    <Button title={price} color= '#FFC107'/>
-   </View>
-   </TouchableOpacity>
+  <View style={styles.courseBox}>
+      <Image source={imageSrc} style={styles.image} />
+      <Text style={styles.title}>{title}</Text>
+      <Text>{description}</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('FirstAid')}>
+        <Text style={styles.price}>{price} </Text>
+      </TouchableOpacity>
+    </View>
 );
 const CourseBox2 = ({ imageSrc, title, description, price, navigation }: any) => (
+  <View style={styles.courseBox}>
+  <Image source={imageSrc} style={styles.image} />
+  <Text style={styles.title}>{title}</Text>
+  <Text>{description}</Text>
   <TouchableOpacity onPress={() => navigation.navigate('sew')}>
-    <View style={styles.courseBox}>
-    <Image source={imageSrc} style={styles.image} />
-    <Text style={styles.title}>{title}</Text>
-    <Text>{description}</Text>
-    <Button title={price} color= '#FFC107'/>
-   </View>
-   </TouchableOpacity>
+    <Text style={styles.price}>{price} </Text>
+  </TouchableOpacity>
+</View>
 );
 const CourseBox3 = ({ imageSrc, title, description, price, navigation }: any) => (
+  <View style={styles.courseBox}>
+  <Image source={imageSrc} style={styles.image} />
+  <Text style={styles.title}>{title}</Text>
+  <Text>{description}</Text>
   <TouchableOpacity onPress={() => navigation.navigate('land')}>
-    <View style={styles.courseBox}>
-    <Image source={imageSrc} style={styles.image} />
-    <Text style={styles.title}>{title}</Text>
-    <Text>{description}</Text>
-    <Button title={price} color= '#FFC107'/>
-   </View>
-   </TouchableOpacity>
+    <Text style={styles.price}>{price} </Text>
+  </TouchableOpacity>
+</View>
 );
 const CourseBox4 = ({ imageSrc, title, description, price, navigation }: any) => (
+  <View style={styles.courseBox}>
+  <Image source={imageSrc} style={styles.image} />
+  <Text style={styles.title}>{title}</Text>
+  <Text>{description}</Text>
   <TouchableOpacity onPress={() => navigation.navigate('lifeS')}>
-    <View style={styles.courseBox}>
-    <Image source={imageSrc} style={styles.image} />
-    <Text style={styles.title}>{title}</Text>
-    <Text>{description}</Text>
-    <Button title={price} color= '#FFC107'/>
-   </View>
-   </TouchableOpacity>
+    <Text style={styles.price}>{price} </Text>
+  </TouchableOpacity>
+</View>
 );
   
   // Styles
@@ -192,6 +192,17 @@ const CourseBox4 = ({ imageSrc, title, description, price, navigation }: any) =>
     title: {
       fontSize: 18,
       fontWeight: 'bold',
+    },
+    price: {
+      height: 30,
+      backgroundColor: '#FFC107',
+      marginVertical: 10,
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      borderRadius: 10,
+      fontSize: 24,
+      fontWeight: 'bold',
+      textAlign: 'center',
     },
     // Footer navigation styles
     footerIcons: {
