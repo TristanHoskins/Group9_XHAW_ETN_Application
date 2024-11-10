@@ -6,7 +6,7 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-type locationScreenProp = StackNavigationProp< RootStackParamList,'location'>;
+type LocationScreenProp = StackNavigationProp< RootStackParamList,'location'>;
 
 
 type Location = {
@@ -27,9 +27,9 @@ type Location = {
 
 };
 
-export default function locationScreen() {
+export default function LocationScreen() {
   // State to manage checkbox selections
-const navigation = useNavigation<locationScreenProp>();
+const navigation = useNavigation<LocationScreenProp>();
 const locations: Location[] = [
 
     {

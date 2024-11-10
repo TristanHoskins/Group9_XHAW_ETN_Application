@@ -6,7 +6,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 type homeScreenProp = StackNavigationProp< RootStackParamList,'home'>;
 
-export default function homeScreen() {
+export default function HomeScreen() {
   const navigation = useNavigation<homeScreenProp>();
 
   return (
@@ -144,7 +144,7 @@ export default function homeScreen() {
       {/* Footer Section with Icon Images */}
       <View style={styles.footerIcons}>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('home')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}> 
           <Image source={require('./img/HomeIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Home</Text>
@@ -168,7 +168,7 @@ export default function homeScreen() {
           <Text style={styles.iconLabel}>Fees</Text>
         </View>
         <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('contact')}> 
+        <TouchableOpacity onPress={() => navigation.navigate('ContactScreen')}> 
           <Image source={require('./img/ContactIcon.png')} style={styles.icon} />
           </TouchableOpacity>
           <Text style={styles.iconLabel}>Contact</Text>
