@@ -2,19 +2,19 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { RootStackParamList } from './screens/RootStackParams';
-import homeScreen from './screens/home';
-import feesScreen from './screens/fees';
-import monthScreen from './screens/month';
-import weekScreen from './screens/week';
+import HomeScreen from './screens/Home';
+import FeesScreen from './screens/Fees';
+import MonthScreen from './screens/Month';
+import WeekScreen from './screens/Week';
 import FirstAidScreen from './screens/FirstAid';  
-import sewScreen from './screens/sew';
-import landScreen from './screens/land';
-import lifeSScreen from './screens/lifeS';
-import childScreen from './screens/child';
-import cookScreen from './screens/cook';
-import gardenScreen from './screens/garden';
-import locationScreen from './screens/location';
-import contactScreen from './screens/contact';
+import SewScreen from './screens/Sew';
+import LandScreen from './screens/Land';
+import LifeSScreen from './screens/LifeS';
+import ChildScreen from './screens/Child';
+import CookScreen from './screens/Cook';
+import GardenScreen from './screens/garden';
+import LocationScreen from './screens/Location';
+import ContactScreen from './screens/Contact';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -22,19 +22,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="home" component={homeScreen} />
-      <Stack.Screen name="fees" component={feesScreen} />
-      <Stack.Screen name="month" component={monthScreen} />
-      <Stack.Screen name="week" component={weekScreen} />
+      <Stack.Screen name="home" component={HomeScreen} />
+      <Stack.Screen name="fees" component={FeesScreen} />
+      <Stack.Screen name="month" component={MonthScreen} />
+      <Stack.Screen name="week" component={WeekScreen} />
       <Stack.Screen name="FirstAid" component={FirstAidScreen} />
-      <Stack.Screen name="sew" component={sewScreen} />
-      <Stack.Screen name="land" component={landScreen} />
-      <Stack.Screen name="lifeS" component={lifeSScreen} />
-      <Stack.Screen name="child" component={childScreen} />
-      <Stack.Screen name="cook" component={cookScreen} />
-      <Stack.Screen name="garden" component={gardenScreen} />
-      <Stack.Screen name="location" component={locationScreen} />
-      <Stack.Screen name="contact" component={contactScreen} />
+      <Stack.Screen name="sew" component={SewScreen} />
+      <Stack.Screen name="land" component={LandScreen} />
+      <Stack.Screen name="lifeS" component={LifeSScreen} />
+      <Stack.Screen name="child" component={ChildScreen} />
+      <Stack.Screen name="cook" component={CookScreen} />
+      <Stack.Screen name="garden" component={GardenScreen} />
+      <Stack.Screen name="location" component={LocationScreen} />
+      <Stack.Screen name="contact" component={ContactScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
