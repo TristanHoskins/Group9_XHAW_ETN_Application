@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from './RootStackParams';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Helmet } from 'react-helmet-async' 
 
 type homeScreenProp = StackNavigationProp< RootStackParamList,'Home'>;
 
@@ -11,6 +12,10 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <Helmet>
+        <title>Empowering the Nation - Home</title>
+        <meta name="description" content="Empowering the Nation provides training programs to increase the employability of domestic workers and gardeners." />
+        <meta name="keywords" content="empowerment, training programs, skills, domestic workers, gardeners, employment, education" />
       <ScrollView style={styles.container}>
         {/* Top Image Section */}
         <View style={styles.topImageContainer}>
