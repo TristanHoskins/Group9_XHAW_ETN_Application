@@ -110,7 +110,7 @@ export default function weekScreen() {
       <Image source={imageSrc} style={styles.image} />
       <Text style={styles.title}>{title}</Text>
       <Text>{description}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('child')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Child')}>
         <Text style={styles.price}>{price} </Text>
       </TouchableOpacity>
     </View>
@@ -121,7 +121,7 @@ export default function weekScreen() {
     <Image source={imageSrc} style={styles.image} />
     <Text style={styles.title}>{title}</Text>
     <Text>{description}</Text>
-    <TouchableOpacity onPress={() => navigation.navigate('cook')}>
+    <TouchableOpacity onPress={() => navigation.navigate('Cook')}>
       <Text style={styles.price}>{price} </Text>
     </TouchableOpacity>
   </View>
@@ -131,7 +131,7 @@ export default function weekScreen() {
     <Image source={imageSrc} style={styles.image} />
     <Text style={styles.title}>{title}</Text>
     <Text>{description}</Text>
-    <TouchableOpacity onPress={() => navigation.navigate('garden')}>
+    <TouchableOpacity onPress={() => navigation.navigate('Garden')}>
       <Text style={styles.price}>{price} </Text>
     </TouchableOpacity>
   </View>

@@ -126,7 +126,7 @@ const CourseBox2 = ({ imageSrc, title, description, price, navigation }: any) =>
   <Image source={imageSrc} style={styles.image} />
   <Text style={styles.title}>{title}</Text>
   <Text>{description}</Text>
-  <TouchableOpacity onPress={() => navigation.navigate('sew')}>
+  <TouchableOpacity onPress={() => navigation.navigate('Sew')}>
     <Text style={styles.price}>{price} </Text>
   </TouchableOpacity>
 </View>
@@ -136,7 +136,7 @@ const CourseBox3 = ({ imageSrc, title, description, price, navigation }: any) =>
   <Image source={imageSrc} style={styles.image} />
   <Text style={styles.title}>{title}</Text>
   <Text>{description}</Text>
-  <TouchableOpacity onPress={() => navigation.navigate('land')}>
+  <TouchableOpacity onPress={() => navigation.navigate('Land')}>
     <Text style={styles.price}>{price} </Text>
   </TouchableOpacity>
 </View>
@@ -146,7 +146,7 @@ const CourseBox4 = ({ imageSrc, title, description, price, navigation }: any) =>
   <Image source={imageSrc} style={styles.image} />
   <Text style={styles.title}>{title}</Text>
   <Text>{description}</Text>
-  <TouchableOpacity onPress={() => navigation.navigate('lifeS')}>
+  <TouchableOpacity onPress={() => navigation.navigate('LifeS')}>
     <Text style={styles.price}>{price} </Text>
   </TouchableOpacity>
 </View>

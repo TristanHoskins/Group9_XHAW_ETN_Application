@@ -4,6 +4,8 @@ import { Checkbox } from 'react-native-paper';
 import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Alert, Linking } from 'react-native';
+
 
 type feesScreenProp = StackNavigationProp< RootStackParamList,'Fees'>;
 
@@ -41,20 +43,20 @@ export default function feesScreen() {
     childMinding: 750,
     gardenMaintenance: 750,
   };
-
-  // Calculation of the total cost with discount
+  
+  // Calculation of the total cost with discount and VAT
   const calculateTotal = () => {
     let sum = 0;
     let selectedCourseCount = 0;
-
-    // Adding of selected courses' prices
+  
+    // Calculate the sum of selected courses' prices
     for (const course of Object.keys(selectedCourses) as (keyof typeof prices)[]) {
       if (selectedCourses[course]) {
         sum += prices[course];
         selectedCourseCount++; // Count the selected course
       }
     }
-
+  
     // Apply discount based on the number of selected courses
     let discountRate = 0;
     if (selectedCourseCount === 2) {
@@ -64,40 +66,77 @@ export default function feesScreen() {
     } else if (selectedCourseCount >= 4) {
       discountRate = 0.15; // 15% discount for four or more courses
     }
-
+  
     // Calculate the total price after discount
     const discountedTotal = sum - sum * discountRate;
-
+  
+    // Add 15% VAT to the discounted total
+    const vatRate = 0.15; // 15% VAT
+    const totalWithVAT = discountedTotal + discountedTotal * vatRate;
+  
     // Update state with the new total and discount
-    setTotal(discountedTotal);
+    setTotal(totalWithVAT);
     setDiscount(discountRate * 100); // Convert discount rate to percentage
   };
+  
 
-  // Submit form and reset values
-  const handleSubmit = () => {
-    // Handle the form submission logic here
+  // Form validation and submission
+const handleSubmit = () => {
+  // Check for empty fields
+  if (!formValues.name.trim() || !formValues.message.trim() || !formValues.email.trim() || !formValues.phoneNumber.trim()) {
+    Alert.alert('ETN Team', 'Please kindly fill in all the fields before submitting.');
+    return;
+  }
 
-    // Clear the form fields and reset checkboxes
-    setFormValues({
-      name: '',
-      message: '',
-      email: '',
-      phoneNumber: '',
+  // Validate email format (basic validation)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formValues.email)) {
+    Alert.alert('Error', 'Please enter a valid email address.');
+    return;
+  }
+
+  // Construct the email body
+  const emailSubject = 'ETN Customer Inquiry';
+  const emailBody = `
+    Name: ${formValues.name}
+    Message: ${formValues.message}
+    Email: ${formValues.email}
+    Phone Number: ${formValues.phoneNumber}
+  `;
+
+  const emailUrl = `mailto:empoweringthenation@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+  // Open the default email client
+  Linking.openURL(emailUrl)
+    .then(() => {
+      Alert.alert('Success!', 'Your message has been sent, We will be in touch shortly! - ETN Team');
+
+      // Reset form fields and checkboxes after successful submission
+      setFormValues({
+        name: '',
+        message: '',
+        email: '',
+        phoneNumber: '',
+      });
+
+      setSelectedCourses({
+        sewing: false,
+        firstAid: false,
+        lifeSkills: false,
+        landscaping: false,
+        cooking: false,
+        childMinding: false,
+        gardenMaintenance: false,
+      });
+
+      setTotal(0);
+      setDiscount(0);
+    })
+    .catch(() => {
+      Alert.alert('Error', 'Failed to send email. Please try again.');
     });
+};
 
-    setSelectedCourses({
-      sewing: false,
-      firstAid: false,
-      lifeSkills: false,
-      landscaping: false,
-      cooking: false,
-      childMinding: false,
-      gardenMaintenance: false,
-    });
-
-    setTotal(0);
-    setDiscount(0);
-  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -116,7 +155,7 @@ export default function feesScreen() {
               <Text style={styles.categoryText}>6-Week Courses | 6-Month Courses</Text>
             </View>
             <View style={styles.courseCategories}>
-              <Text style={styles.categoryText}>R1 500 p/course | R 750 p/course </Text>
+              <Text style={styles.categoryText}>R 750 p/course | R 1500 p/course </Text>
             </View>
             {/* Course List with Checkboxes */}
             <View style={styles.coursesList}>
@@ -222,6 +261,9 @@ export default function feesScreen() {
                   TOTAL: <Text style={styles.discountText}>R{total.toFixed(2)}</Text>
                 </Text>
               </View>
+            </View>
+            <View style={styles.vatAdd}>
+              <Text style={styles.vatText}>Automatic addition of 15% VAT </Text>
             </View>
           </View>
         </View>
@@ -393,6 +435,14 @@ const styles = StyleSheet.create({
   },
   discountText: {
     fontWeight: 'bold',
+  },
+  vatAdd: {
+    alignContent: 'center',
+    marginTop: 2,
+  },
+  vatText: {
+    marginTop: 5,
+    marginLeft: 78,
   },
   contactForm: {
     padding: 20,
