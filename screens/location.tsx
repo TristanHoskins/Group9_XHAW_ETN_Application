@@ -1,10 +1,11 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
-import MapView, { Marker } from 'react-native-maps'; // Importing MapView and Marker
+import MapView, { Marker } from 'react-native-maps'; 
 import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Helmet } from 'react-helmet-async';
 
 type LocationScreenProp = StackNavigationProp< RootStackParamList,'Location'>;
 
@@ -79,6 +80,11 @@ const locations: Location[] = [
 
   return (
     <View style={styles.container}>
+      <Helmet>
+        <title>Empowering the Nation - location</title>
+        <meta name="description" content="Empowering the Nation main three locations are in Sandron, Troye st and Parktown" />
+        <meta name="keywords" content="empowerment, location, sandton, johannesburg, parktown, troye street, education"/>
+        </Helmet>
       <ScrollView style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>

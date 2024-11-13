@@ -14,6 +14,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Helmet } from 'react-helmet-async';
 
 
 type contactScreenProp = StackNavigationProp< RootStackParamList,'Contact'>;
@@ -25,6 +26,11 @@ export default function contactScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Helmet>
+        <title>Empowering the Nation - contact page</title>
+        <meta name="description" content="Empowering the Nation can be contacted through phone, email as well as 3 social media platforms" />
+        <meta name="keywords" content="empowerment, contact, social media, phone, email, tiktok, facebook,twitter"/>
+        </Helmet>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
 
         {/* Header Section */}

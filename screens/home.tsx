@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'rea
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from './RootStackParams';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Helmet } from 'react-helmet-async' 
+import { Helmet } from 'react-helmet-async';
 
 type homeScreenProp = StackNavigationProp< RootStackParamList,'Home'>;
 

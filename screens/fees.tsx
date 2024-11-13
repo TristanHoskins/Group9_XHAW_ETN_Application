@@ -5,6 +5,7 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Alert, Linking } from 'react-native';
+import { Helmet } from 'react-helmet-async';
 
 
 type feesScreenProp = StackNavigationProp< RootStackParamList,'Fees'>;
@@ -140,6 +141,11 @@ const handleSubmit = () => {
 
   return (
     <View style={{ flex: 1 }}>
+      <Helmet>
+        <title>Empowering the Nation - fees page</title>
+        <meta name="description" content="Empowering the Nation provides a discount based off the amount of course you choose to enrol in which includes VAT. 5% for two courses, 10% for three courses and 15% for 4 courses" />
+        <meta name="keywords" content="empowerment,VAT, discount, email, message, "/>
+        </Helmet>
       <ScrollView style={styles.container}>
         {/* Banner */}
         <View style={styles.bannerContainer}>

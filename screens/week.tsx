@@ -4,6 +4,7 @@ import { Picker } from '@react-native-picker/picker'; // Correct import
 import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Helmet } from 'react-helmet-async';
 
 type weekScreenProp = StackNavigationProp< RootStackParamList,'Week'>;
 
@@ -14,7 +15,11 @@ export default function weekScreen() {
   return (
     <View style={styles.appContainer}>
       {/* Dropdown/Picker to filter courses */}
-      
+      <Helmet>
+        <title>Empowering the Nation - more page</title>
+        <meta name="description" content="Empowering the Nation offers three 6 week courses and four 6 month courses. Week courses are each R750 which includes child minding, gardening and cooking. month courses are R1500 which include first aid, land scaping, sewing and life skills" />
+        <meta name="keywords" content="empowerment, land scaping, sewing, first aid, gardening, life skills,child minding,cooking,education"/>
+        </Helmet>
 
       <Text style={styles.courseDuration}>
         {selectedCourse === "6Week" ? "6 Week Course" : "6 Week Course"}
