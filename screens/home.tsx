@@ -16,6 +16,7 @@ export default function HomeScreen() {
         <title>Empowering the Nation - Home</title>
         <meta name="description" content="Empowering the Nation provides training programs to increase the employability of domestic workers and gardeners." />
         <meta name="keywords" content="empowerment, training programs, skills, domestic workers, gardeners, employment, education" />
+        </Helmet>
       <ScrollView style={styles.container}>
         {/* Top Image Section */}
         <View style={styles.topImageContainer}>
