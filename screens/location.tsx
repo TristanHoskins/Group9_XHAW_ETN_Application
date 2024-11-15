@@ -90,13 +90,21 @@ const locations: Location[] = [
       <ScrollView style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
+        
         {/* Logo Image */}
         <Image
           source={require('./img/logo.png')}
           style={styles.logo} />
         <Text style={styles.headerText}>EMPOWERING</Text>
         <Text style={styles.subHeaderText}>THE NATION</Text>
+        <View style={styles.backB}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+        <Image source={require('./img/backB.png')} style={styles.back}/>
+      </TouchableOpacity>
       </View>
+       
+      </View>
+      
 
       {locations.map((location, index) => (
 
@@ -137,11 +145,7 @@ const locations: Location[] = [
             <Marker coordinate={location.coords} />
 
           </MapView>
-          <View style={styles.backB}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
-        <Image source={require('./img/backB.png')} style={styles.back}/>
-      </TouchableOpacity>
-      </View>
+        
 
         </View>
 
@@ -202,8 +206,8 @@ const styles = StyleSheet.create({
     marginRight: 50,
   },
   backB: { 
-    marginTop: -70,
-    marginLeft: 350,
+    marginTop: -40,
+    marginLeft: 300,
    },
    back: {
     width: 70,

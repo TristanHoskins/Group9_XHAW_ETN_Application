@@ -70,14 +70,15 @@ export default function ContactScreen() {
                 <FontAwesome5 name="twitter" size={20} color="lightblue" />
                 <Text style={styles.buttonText}>Twitter</Text>
               </TouchableOpacity>
-            </View>
-            </View>
-            </View>
-            <View style={styles.backB}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+              <View style={styles.backB}>
+      <TouchableOpacity onPress={() => navigation.navigate('Fees')}> 
         <Image source={require('./img/backB.png')} style={styles.back}/>
       </TouchableOpacity>
       </View>
+            </View>
+            </View>
+            </View>
+           
             
             </ScrollView>
       {/* Footer Section with Icon Images */}

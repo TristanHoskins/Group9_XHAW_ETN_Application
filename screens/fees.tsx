@@ -327,7 +327,7 @@ const handleSubmit = () => {
           <Text style={styles.footerText}>Email: empoweringthenation@gmail.com</Text>
         </View>
         <View style={styles.backB}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+      <TouchableOpacity onPress={() => navigation.navigate('Month')}> 
         <Image source={require('./img/backB.png')} style={styles.back}/>
       </TouchableOpacity>
       </View>
