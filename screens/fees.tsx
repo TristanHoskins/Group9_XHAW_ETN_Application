@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Alert, Linking } from 'react-native';
 import { Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 type feesScreenProp = StackNavigationProp< RootStackParamList,'Fees'>;
@@ -140,6 +141,7 @@ const handleSubmit = () => {
 
 
   return (
+    <HelmetProvider>
     <View style={{ flex: 1 }}>
       <Helmet>
         <title>Empowering the Nation - fees page</title>
@@ -324,6 +326,11 @@ const handleSubmit = () => {
           <Text style={styles.footerText}>Phone: +27 11 618 0547</Text>
           <Text style={styles.footerText}>Email: empoweringthenation@gmail.com</Text>
         </View>
+        <View style={styles.backB}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+        <Image source={require('./img/backB.png')} style={styles.back}/>
+      </TouchableOpacity>
+      </View>
       </ScrollView>
       {/* Footer Section with Icon Images */}
       <View style={styles.footerIcons}>
@@ -359,6 +366,7 @@ const handleSubmit = () => {
         </View>
       </View>
     </View>
+    </HelmetProvider>
   );
 }
 
@@ -372,6 +380,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
+  },
+  backB: { 
+    marginTop: -70,
+    marginLeft: 350,
+   },
+   back: {
+    width: 70,
+    height: 60,
   },
   banner: {
     width: 410,

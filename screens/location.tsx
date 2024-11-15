@@ -6,6 +6,7 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 
 type LocationScreenProp = StackNavigationProp< RootStackParamList,'Location'>;
 
@@ -79,6 +80,7 @@ const locations: Location[] = [
 
 
   return (
+    <HelmetProvider>
     <View style={styles.container}>
       <Helmet>
         <title>Empowering the Nation - location</title>
@@ -135,6 +137,11 @@ const locations: Location[] = [
             <Marker coordinate={location.coords} />
 
           </MapView>
+          <View style={styles.backB}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+        <Image source={require('./img/backB.png')} style={styles.back}/>
+      </TouchableOpacity>
+      </View>
 
         </View>
 
@@ -174,7 +181,7 @@ const locations: Location[] = [
         </View>
       </View>
     </View>
-    
+    </HelmetProvider>
   );
 };
 
@@ -193,6 +200,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 40,
     marginRight: 50,
+  },
+  backB: { 
+    marginTop: -70,
+    marginLeft: 350,
+   },
+   back: {
+    width: 70,
+    height: 60,
   },
   headerText: {
     fontSize: 30,

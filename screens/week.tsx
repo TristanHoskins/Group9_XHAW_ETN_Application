@@ -5,6 +5,7 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 
 type weekScreenProp = StackNavigationProp< RootStackParamList,'Week'>;
 
@@ -13,6 +14,7 @@ export default function weekScreen() {
   const [selectedCourse, setSelectedCourse] = useState<string>("6Week"); // Explicit type
 
   return (
+    <HelmetProvider>
     <View style={styles.appContainer}>
       {/* Dropdown/Picker to filter courses */}
       <Helmet>
@@ -105,7 +107,8 @@ export default function weekScreen() {
           <Text style={styles.iconLabel}>Contact</Text>
         </View>
       </View>
-    </View>
+    </View> 
+    </HelmetProvider>
     );
   }
   
@@ -140,6 +143,7 @@ export default function weekScreen() {
       <Text style={styles.price}>{price} </Text>
     </TouchableOpacity>
   </View>
+ 
   );
   
   // Styles

@@ -4,13 +4,16 @@ import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from './RootStackParams';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 
 type homeScreenProp = StackNavigationProp< RootStackParamList,'Home'>;
 
 export default function HomeScreen() {
   const navigation = useNavigation<homeScreenProp>();
+  
 
   return (
+  <HelmetProvider>
     <View style={styles.container}>
       <Helmet>
         <title>Empowering the Nation - Home</title>
@@ -145,6 +148,11 @@ export default function HomeScreen() {
           ongoing learning in our company.”
         </Text>
       </View>
+      <View style={styles.backB}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+        <Image source={require('./img/backB.png')} style={styles.back}/>
+      </TouchableOpacity>
+      </View>
       </View>
       </ScrollView>
       {/* Footer Section with Icon Images */}
@@ -181,7 +189,7 @@ export default function HomeScreen() {
         </View>
       </View>
     </View>
-    
+    </HelmetProvider>
   );
 };
 
@@ -195,6 +203,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
+  },
+  backB: { 
+    marginTop: -70,
+    marginLeft: 350,
+   },
+   back: {
+    width: 70,
+    height: 60,
   },
   TopImage: {
     width: 410,

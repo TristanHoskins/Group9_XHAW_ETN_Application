@@ -15,16 +15,18 @@ import { RootStackParamList } from './RootStackParams';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 type contactScreenProp = StackNavigationProp< RootStackParamList,'Contact'>;
 
-export default function contactScreen() {
+export default function ContactScreen() {
     
   const navigation = useNavigation<contactScreenProp>();
 
 
   return (
+    <HelmetProvider>
     <SafeAreaView style={styles.container}>
       <Helmet>
         <title>Empowering the Nation - contact page</title>
@@ -71,6 +73,11 @@ export default function contactScreen() {
             </View>
             </View>
             </View>
+            <View style={styles.backB}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+        <Image source={require('./img/backB.png')} style={styles.back}/>
+      </TouchableOpacity>
+      </View>
             
             </ScrollView>
       {/* Footer Section with Icon Images */}
@@ -109,6 +116,7 @@ export default function contactScreen() {
     
 
     </SafeAreaView>
+    </HelmetProvider>
   );
 }
 
@@ -120,6 +128,14 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'flex-start',
     
+  },
+  backB: { 
+    marginTop: -70,
+    marginLeft: 350,
+   },
+   back: {
+    width: 70,
+    height: 60,
   },
   logo: {
     width: 500,
